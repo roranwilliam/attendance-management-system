@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+
+<!-- ... (previous code) -->
+
+{% block content %}
+    <h2>Register classes</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/register_classes" method="post">
+        <input type="text" name="class_code">
+        <input type="text" name="class_name">
+        <input type="submit" name="submit">
+    </form>
+
+    <a href="{{ url_for('dashboard') }}">Dashboard</a><br>
+    
+    
+{% endblock %}

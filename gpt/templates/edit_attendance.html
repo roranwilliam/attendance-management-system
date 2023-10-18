@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Attendance{% endblock %}
+
+{% block content %}
+    <h2>Edit Attendance</h2>
+    <form method="post">
+        Date: <input type="date" name="date" value="{{ attendance_record.date }}" required><br><br>
+        Status:
+        <select name="status" required>
+            <option value="Present" {% if attendance_record.status == 'Present' %}selected{% endif %}>Present</option>
+            <option value="Absent" {% if attendance_record.status == 'Absent' %}selected{% endif %}>Absent</option>
+        </select><br><br>
+        <input type="submit" value="Save Changes">
+    </form>
+{% endblock %}

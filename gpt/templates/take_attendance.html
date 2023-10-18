@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Manage Attendance{% endblock %}
+
+{% block content %}
+    <h2>Manage Attendance</h2>
+    <form method="post" action="/attendance">
+        present<input type="radio" name="status" value="present">
+        absent<input type="radio" name="status" value="absent">
+        <input type="submit" name="submit">
+    </form>
+{% endblock %}

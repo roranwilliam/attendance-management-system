@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Student List{% endblock %}
+
+{% block content %}
+<form method="post" action="/student">
+        <input type='text' name='first_name' placeholder='first name'>
+        <input type='text' name='last_name' placeholder='last name'>
+        <input type='text' name='Adm_no' placeholder='adm no'>
+        <input type='email' name='email' placeholder='email'>
+        <input type='submit' name='submit'>
+
+    </form>
+  
+   
+
+{% endblock %}

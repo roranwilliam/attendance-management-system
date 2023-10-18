@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Take Attendance{% endblock %}
+
+{% block content %}
+    <h2>Take Attendance</h2>
+    <form method="post" action="{{ url_for('submit_attendance', class_id=class_id, student_id=student_id) }}">
+        Date: <input type="date" name="date" required><br><br>
+        Status: 
+        <select name="status" required>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
